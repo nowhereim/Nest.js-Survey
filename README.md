@@ -1,76 +1,46 @@
-<h1>.........업로드 중입니다. 잠시만 기다려주세요..........
-
-
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 🎼 🎵 사용방법 🎶 🎹
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a> 
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+1.postgresql은 로컬에서 작동합니다.<br>
+<br>
+2.로컬에 깔려있다는 전제하에 만들었습니다.<br>
+<br>
+3.받으신 후 passwoed와 로컬 database를 설정해주세요.<br>
+<br>
+4.npm install 이후 npm start로 실행합니다.<br>
+<br>
+5.http://localhost:4000/graphql 로 접속 후 DOCS를 참고하여 사용합니다.<br>
+<br>
 
-## Description
+Survey 작성 -> Question 작성 -> Choice 작성 -> 답변 작성 순서입니다.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## 🌟 프로젝트 주요 기능
 
-```bash
-$ npm install
-```
+1. [설문 , 문항 , 선택지 , 답변] CRUD , error , logging
 
-## Running the app
+## 🍀 API 명세
 
-```bash
-# development
-$ npm run start
+![api](https://user-images.githubusercontent.com/113084907/213311003-029f7d05-5b6b-4546-a2c9-f50498cd27bf.jpg)
 
-# watch mode
-$ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
+##  사용 기술
 
-## Test
+> **typescript**
 
-```bash
-# unit tests
-$ npm run test
+> **nest.js**
 
-# e2e tests
-$ npm run test:e2e
+> **graphql**
 
-# test coverage
-$ npm run test:cov
-```
+> **typeorm**
 
-## Support
+> **postgresql**
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+> **winston**
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+<br/>
+</div>

@@ -1,4 +1,5 @@
-<h1>............................업로드 중입니다..........................
+<h1>.........업로드 중입니다. 잠시만 기다려주세요..........
+
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>

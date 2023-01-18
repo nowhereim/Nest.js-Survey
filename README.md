@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-## 🎼 🎵 사용방법 🎶 🎹
+## 🌟🌟 사용방법 🌟🌟
 
 1.postgresql은 로컬에서 작동합니다.<br>
 <br>
@@ -22,12 +22,12 @@ Survey 작성 -> Question 작성 -> Choice 작성 -> 답변 작성 순서입니�
 
 1. [설문 , 문항 , 선택지 , 답변] CRUD , error , logging
 
-## 🍀 API 명세
+## 🍀 API
 
 ![api](https://user-images.githubusercontent.com/113084907/213311003-029f7d05-5b6b-4546-a2c9-f50498cd27bf.jpg)
 
 
-##  사용 기술
+##  🌟사용 기술🌟
 
 > **typescript**
 

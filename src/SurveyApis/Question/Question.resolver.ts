@@ -1,20 +1,42 @@
-// import { Query, Resolver } from '@nestjs/graphql';
-// import { SurveyService } from './Survey.service';
+import { Args, Mutation, Resolver } from '@nestjs/graphql';
+import { createQuestionInput } from '../dto/createQuestion.input';
+import { UpdateQuestionInput } from '../dto/updateQuestion.input';
+import { Question } from './entities/question.entity';
+import { QuestionService } from './Question.service';
 
-// @Resolver()
-// export class SurveyResolver {
-//   constructor(private readonly surveyService: SurveyService) {}
+@Resolver()
+export class QuestionResolver {
+  constructor(private readonly questionService: QuestionService) {}
 
-//   @Query(() => String)
-//   getHello(): string {
-//     return this.surveyService.getHello();
-//   }
-//   // @Query('/hey')
-//   // getgood(): string {
-//   //   return this.surveyService.getHello();
-//   // }
-//   // @Query('/holla')
-//   // hollahello(): string {
-//   //   return this.surveyService.getHello();
-//   // }
-// }
+  @Mutation(() => [Question])
+  CreateQuestion(
+    @Args('QuestionInput') QuestionInput: createQuestionInput,
+    @Args('SurveyNumber') SurveyNumber: number,
+  ) {
+    const result = this.questionService.createQuestion(
+      QuestionInput,
+      SurveyNumber,
+    );
+    return result;
+  }
+
+  @Mutation(() => Question)
+  async UpdateQuestion(
+    @Args('QuestionNumber') QuestionNumber: number,
+    @Args('QuestionInput') QuestionInput: UpdateQuestionInput,
+  ) {
+    await this.questionService.checkExistQuestion(QuestionNumber);
+    const result = await this.questionService.updateQuestion(
+      QuestionNumber,
+      QuestionInput,
+    );
+    return result;
+  }
+
+  @Mutation(() => Boolean)
+  async DeleteQuestion(@Args('QuestionNumber') QuestionNumber: number) {
+    await this.questionService.checkExistQuestion(QuestionNumber);
+    const result = await this.questionService.deleteQuestion(QuestionNumber);
+    return result;
+  }
+}

@@ -1,10 +1,11 @@
-// import { Module } from '@nestjs/common';
-// import { SurveyService } from './Survey.service';
-// import { SurveyResolver } from './Survey.resolver';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Question } from './entities/question.entity';
+import { QuestionResolver } from './Question.resolver';
+import { QuestionService } from './Question.service';
 
-// @Module({
-//   // import: [],
-//   // controllers: [],
-//   providers: [SurveyResolver, SurveyService],
-// })
-// export class SurveyModule {}
+@Module({
+  imports: [TypeOrmModule.forFeature([Question])],
+  providers: [QuestionResolver, QuestionService],
+})
+export class QuestionModule {}

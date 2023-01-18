@@ -2,6 +2,87 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Survey {
+  SurveyNumber: Int!
+  SurveyName: String!
+  SurveyContents: String!
+}
+
+type Question {
+  Question: String!
+}
+
+type Choice {
+  Score: Int!
+  Choice: String!
+}
+
+type Reply {
+  ChoiceNum1: Int!
+  ChoiceNum2: Int!
+  ChoiceNum3: Int!
+  TotalScore: Int!
+  costomerName: String!
+}
+
 type Query {
-  getHello: String!
+  fetchReplyAll: [Reply!]!
+  fetchRsultSurvey(ReplyNumber: Float!): Reply!
+  fetchSurveyAll: [Survey!]!
+  fetchSurveyOne(SurveyNumber: Float!): Survey!
+  fetchChoiceAll: [Choice!]!
+}
+
+type Mutation {
+  createReply(SurveyNumber: Float!, ChoiceInput: CreateReplyInput!): Reply!
+  updateReply(ReplyNumber: Float!, ChoiceInput: CreateReplyInput!): Reply!
+  deleteReply(ReplyNumber: Float!): Boolean!
+  createSurvey(SurveyName: String!, SurveyContents: String!): Survey!
+  updateSurvey(SurveyNumber: Float!, updateSurveyInput: UpdateSurveyInput!): Survey!
+  deleteSurvey(SurveyNumber: Float!): Boolean!
+  CreateQuestion(QuestionInput: createQuestionInput!, SurveyNumber: Float!): [Question!]!
+  UpdateQuestion(QuestionNumber: Float!, QuestionInput: UpdateQuestionInput!): Question!
+  DeleteQuestion(QuestionNumber: Float!): Boolean!
+  createChoice(QuestionNumber: Float!, ChoiceInput: CreateChoiceInput!, Score: CreateScoreInput!): [Choice!]!
+  updateChoice(ChoiceNumber: Float!, updateChoiceInput: UpdateChoiceInput!): Choice!
+  deleteChoice(ChoiceNumber: Float!): Boolean!
+}
+
+input CreateReplyInput {
+  Choice1: Int!
+  Choice2: Int!
+  Choice3: Int!
+  costomerName: String!
+}
+
+input UpdateSurveyInput {
+  SurveyName: String
+  SurveyContents: String
+}
+
+input createQuestionInput {
+  Question1: String!
+  Question2: String!
+  Question3: String!
+}
+
+input UpdateQuestionInput {
+  Question: String!
+}
+
+input CreateChoiceInput {
+  Choice1: String!
+  Choice2: String!
+  Choice3: String!
+}
+
+input CreateScoreInput {
+  Choice1Score: Int!
+  Choice2Score: Int!
+  Choice3Score: Int!
+}
+
+input UpdateChoiceInput {
+  Choice: String
+  Score: Float
 }

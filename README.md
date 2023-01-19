@@ -8,7 +8,7 @@
 
 1.postgresql은 로컬 작동합니다.<br>
 <br> 2.로컬에 깔려있다는 전제하에 만들었습니다.<br>
-<br> 3.받으신 후 password와 로컬 database를 설정해주세요.<br>
+<br> 3.받으신 후 Nest.js-Survey 폴더 안으로 진입한 후 src => app.module.ts password와 로컬 database를 설정해주세요.<br>
 <br>
 4.npm install 이후 npm start로 실행합니다.<br>
 <br>

@@ -2,8 +2,6 @@ import { Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Choice } from '../Choice/entities/choice.entity';
-import { Question } from '../Question/entities/question.entity';
-import { Survey } from '../Survey/entities/survey.entity';
 import { Reply } from './entities/reply.entity';
 
 @Injectable()

@@ -13,7 +13,3 @@ export class HttpExceptionFilter implements ExceptionFilter {
     console.log('====================================');
   }
 }
-
-//외부에서 사용하는 방법은 다음과 같습니다.
-// import { HttpExceptionFilter } from 'src/commons/filter/http-exception.filter';
-//

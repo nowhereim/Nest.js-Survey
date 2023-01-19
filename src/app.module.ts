@@ -11,7 +11,7 @@ import * as winston from 'winston';
 const level = process.env.NODE_ENV === 'production' ? 'error' : 'silly';
 const format = winston.format.combine(
   winston.format.timestamp(),
-  utilities.format.nestLike('앞에붙는명칭', { prettyPrint: true }),
+  utilities.format.nestLike('front', { prettyPrint: true }),
 );
 @Module({
   imports: [
@@ -41,9 +41,9 @@ const format = winston.format.combine(
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
-      password: '',//TODO: 패스워드 입력해주세요.
-      database: '',//TODO: DB명 입력해주세요.
+      username: '', //TODO: DB username
+      password: '', //TODO: DB password
+      database: '', //TODO: DB name
       entities: [__dirname + '/SurveyApis/**/*.entity.ts'],
       synchronize: true,
       logging: true,

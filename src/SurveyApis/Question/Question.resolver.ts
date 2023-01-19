@@ -1,3 +1,4 @@
+import { Query } from '@nestjs/common';
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { createQuestionInput } from '../dto/createQuestion.input';
 import { UpdateQuestionInput } from '../dto/updateQuestion.input';

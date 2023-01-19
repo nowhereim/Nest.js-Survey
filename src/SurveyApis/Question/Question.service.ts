@@ -9,6 +9,11 @@ export class QuestionService {
     @InjectRepository(Question)
     private readonly questionRepository: Repository<Question>,
   ) {}
+
+  async fetchQuestionAll() {
+    return await this.questionRepository.find();
+  }
+
   async createQuestion(Question, SurveyNumber) {
     const result = await this.questionRepository.save([
       { Question: Question.Question1, SurveyNumber: SurveyNumber },

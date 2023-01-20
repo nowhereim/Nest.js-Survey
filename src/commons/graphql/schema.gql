@@ -9,18 +9,24 @@ type Survey {
 }
 
 type Question {
+  QuestionNumber: Int!
   Question: String!
+  SurveyNumber: Survey!
 }
 
 type Choice {
+  ChoiceNumber: Int!
+  QuestionNumber: Question!
   Score: Int!
   Choice: String!
 }
 
 type Reply {
-  ChoiceNum1: Int!
-  ChoiceNum2: Int!
-  ChoiceNum3: Int!
+  ReplyNumber: Int!
+  ChoiceNum1: Choice!
+  ChoiceNum2: Choice!
+  ChoiceNum3: Choice!
+  Survey: Survey!
   TotalScore: Int!
   costomerName: String!
 }

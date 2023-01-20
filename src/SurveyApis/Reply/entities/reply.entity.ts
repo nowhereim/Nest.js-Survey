@@ -9,28 +9,34 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Choice } from '../../Choice/entities/choice.entity';
 
 @Entity()
 @ObjectType()
 export class Reply {
   @PrimaryGeneratedColumn('increment')
+  @Field(() => Int)
   ReplyNumber: number;
 
   @JoinColumn()
+  @ManyToOne(() => Choice)
+  @Field(() => Choice)
+  ChoiceNum1: Choice;
+
+  @JoinColumn()
+  @ManyToOne(() => Choice)
+  @Field(() => Choice)
+  ChoiceNum2: Choice;
+
+  @JoinColumn()
+  @ManyToOne(() => Choice)
+  @Field(() => Choice)
+  ChoiceNum3: Choice;
+
+  @JoinColumn()
   @ManyToOne(() => Survey)
-  SurveyNumber: Survey;
-
-  @Column()
-  @Field(() => Int)
-  ChoiceNum1: number;
-
-  @Column()
-  @Field(() => Int)
-  ChoiceNum2: number;
-
-  @Column()
-  @Field(() => Int)
-  ChoiceNum3: number;
+  @Field(() => Survey)
+  Survey: Survey;
 
   @Column()
   @Field(() => Int)

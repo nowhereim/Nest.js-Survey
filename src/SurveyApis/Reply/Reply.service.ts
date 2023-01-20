@@ -16,12 +16,34 @@ export class ReplyService {
   async fetchResultSurvey(ReplyNumber) {
     const result = await this.replyRepository.findOne({
       where: { ReplyNumber: ReplyNumber },
+      relations: [
+        'Survey',
+        'ChoiceNum1',
+        'ChoiceNum2',
+        'ChoiceNum3',
+        'ChoiceNum1.QuestionNumber',
+        'ChoiceNum2.QuestionNumber',
+        'ChoiceNum3.QuestionNumber',
+      ],
     });
+    console.log(result);
     return result;
   }
 
   async fetchReplyAll() {
-    return await this.replyRepository.find();
+    const result = await this.replyRepository.find({
+      relations: [
+        'Survey',
+        'ChoiceNum1',
+        'ChoiceNum2',
+        'ChoiceNum3',
+        'ChoiceNum1.QuestionNumber',
+        'ChoiceNum2.QuestionNumber',
+        'ChoiceNum3.QuestionNumber',
+      ],
+    });
+
+    return result;
   }
 
   async createReply(SurveyNumber, ChoiceNum) {
@@ -47,6 +69,7 @@ export class ReplyService {
       TotalScore: sum,
       costomerName: ChoiceNum.costomerName,
     };
+
     return await this.replyRepository.save(saveresult);
   }
 

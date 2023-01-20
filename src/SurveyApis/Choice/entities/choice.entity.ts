@@ -14,9 +14,11 @@ import {
 @ObjectType()
 export class Choice {
   @PrimaryGeneratedColumn('increment')
+  @Field(() => Int)
   ChoiceNumber: number;
 
   @ManyToOne(() => Question)
+  @Field(() => Question)
   QuestionNumber: Question;
 
   @Column()

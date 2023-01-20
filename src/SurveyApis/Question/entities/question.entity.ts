@@ -1,4 +1,4 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Survey } from '../../Survey/entities/survey.entity';
 import {
   Column,
@@ -13,6 +13,7 @@ import {
 @ObjectType()
 export class Question {
   @PrimaryGeneratedColumn('increment')
+  @Field(() => Int)
   QuestionNumber: number;
 
   @Column()
@@ -20,6 +21,7 @@ export class Question {
   Question: string;
 
   @ManyToOne(() => Survey)
+  @Field(() => Survey)
   SurveyNumber: Survey;
 
   @CreateDateColumn()

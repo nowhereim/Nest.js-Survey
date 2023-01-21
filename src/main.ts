@@ -8,7 +8,7 @@ async function bootstrap() {
   const logger = new Logger();
   const app = await NestFactory.create(AppModule);
 
-  const port = 3000;
+  const port = 4000;
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(port);

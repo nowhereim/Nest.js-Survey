@@ -26,7 +26,6 @@ export class ReplyService {
         'ChoiceNum3.QuestionNumber',
       ],
     });
-    console.log(result);
     return result;
   }
 

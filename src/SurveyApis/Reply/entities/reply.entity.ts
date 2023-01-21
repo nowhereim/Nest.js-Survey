@@ -44,7 +44,7 @@ export class Reply {
 
   @Column({ nullable: true })
   @Field(() => String)
-  costomerName: string;
+  customer: string;
 
   @CreateDateColumn()
   createdAt: Date;

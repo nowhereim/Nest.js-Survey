@@ -10,7 +10,7 @@ export class QuestionResolver {
   constructor(private readonly questionService: QuestionService) {}
 
   @Mutation(() => [Question])
-  CreateQuestion(
+  createQuestion(
     @Args('QuestionInput') QuestionInput: createQuestionInput,
     @Args('SurveyNumber') SurveyNumber: number,
   ) {
@@ -22,7 +22,7 @@ export class QuestionResolver {
   }
 
   @Mutation(() => Question)
-  async UpdateQuestion(
+  async updateQuestion(
     @Args('QuestionNumber') QuestionNumber: number,
     @Args('QuestionInput') QuestionInput: UpdateQuestionInput,
   ) {
@@ -35,7 +35,7 @@ export class QuestionResolver {
   }
 
   @Mutation(() => Boolean)
-  async DeleteQuestion(@Args('QuestionNumber') QuestionNumber: number) {
+  async deleteQuestion(@Args('QuestionNumber') QuestionNumber: number) {
     await this.questionService.checkExistQuestion(QuestionNumber);
     const result = await this.questionService.deleteQuestion(QuestionNumber);
     return result;

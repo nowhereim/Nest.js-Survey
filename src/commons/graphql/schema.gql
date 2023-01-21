@@ -28,7 +28,7 @@ type Reply {
   ChoiceNum3: Choice!
   Survey: Survey!
   TotalScore: Int!
-  costomerName: String!
+  customer: String!
 }
 
 type Query {
@@ -46,9 +46,9 @@ type Mutation {
   createSurvey(SurveyName: String!, SurveyContents: String!): Survey!
   updateSurvey(SurveyNumber: Float!, updateSurveyInput: UpdateSurveyInput!): Survey!
   deleteSurvey(SurveyNumber: Float!): Boolean!
-  CreateQuestion(QuestionInput: createQuestionInput!, SurveyNumber: Float!): [Question!]!
-  UpdateQuestion(QuestionNumber: Float!, QuestionInput: UpdateQuestionInput!): Question!
-  DeleteQuestion(QuestionNumber: Float!): Boolean!
+  createQuestion(QuestionInput: createQuestionInput!, SurveyNumber: Float!): [Question!]!
+  updateQuestion(QuestionNumber: Float!, QuestionInput: UpdateQuestionInput!): Question!
+  deleteQuestion(QuestionNumber: Float!): Boolean!
   createChoice(QuestionNumber: Float!, ChoiceInput: CreateChoiceInput!, Score: CreateScoreInput!): [Choice!]!
   updateChoice(ChoiceNumber: Float!, updateChoiceInput: UpdateChoiceInput!): Choice!
   deleteChoice(ChoiceNumber: Float!): Boolean!

@@ -25,7 +25,8 @@ Survey 작성 -> Question 작성 -> Choice 작성 -> 답변 작성 순서입니�
 
 ## 🍀 API
 
-![api](https://user-images.githubusercontent.com/113084907/213311003-029f7d05-5b6b-4546-a2c9-f50498cd27bf.jpg)
+![image](https://user-images.githubusercontent.com/113084907/213829180-73becbdf-81bf-49c7-9d38-cf5a4c593955.png)
+
 
 ## 🌟사용 기술🌟
 

@@ -31,6 +31,22 @@ type Reply {
   customer: String!
 }
 
+type CreateReplyOutput {
+  ChoiceNum1: Int!
+  ChoiceNum2: Int!
+  ChoiceNum3: Int!
+  customer: String!
+  Survey: Int!
+  TotalScore: Int!
+  ReplyNumber: Int!
+}
+
+type CreateSurveyAllOutput {
+  survey: Survey!
+  question: [Question!]!
+  choice: [Choice!]!
+}
+
 type Query {
   fetchReplyAll: [Reply!]!
   fetchRsultSurvey(ReplyNumber: Float!): Reply!
@@ -40,12 +56,13 @@ type Query {
 }
 
 type Mutation {
-  createReply(SurveyNumber: Float!, ChoiceInput: CreateReplyInput!): Reply!
+  createReply(SurveyNumber: Float!, ChoiceInput: CreateReplyInput!): CreateReplyOutput!
   updateReply(ReplyNumber: Float!, ChoiceInput: CreateReplyInput!): Reply!
   deleteReply(ReplyNumber: Float!): Boolean!
   createSurvey(SurveyName: String!, SurveyContents: String!): Survey!
   updateSurvey(SurveyNumber: Float!, updateSurveyInput: UpdateSurveyInput!): Survey!
   deleteSurvey(SurveyNumber: Float!): Boolean!
+  createSurveyAll(CreateSurveyAllInput: CreateSurveyAllInput!): CreateSurveyAllOutput!
   createQuestion(QuestionInput: createQuestionInput!, SurveyNumber: Float!): [Question!]!
   updateQuestion(QuestionNumber: Float!, QuestionInput: UpdateQuestionInput!): Question!
   deleteQuestion(QuestionNumber: Float!): Boolean!
@@ -58,12 +75,38 @@ input CreateReplyInput {
   Choice1: Int!
   Choice2: Int!
   Choice3: Int!
-  costomerName: String!
+  customer: String!
 }
 
 input UpdateSurveyInput {
   SurveyName: String
   SurveyContents: String
+}
+
+input CreateSurveyAllInput {
+  SurveyName: String!
+  SurveyContents: String!
+  Question1: String!
+  Question2: String!
+  Question3: String!
+  Choice1Qnum1: String!
+  Choice2Qnum1: String!
+  Choice3Qnum1: String!
+  Choice1Qnum2: String!
+  Choice2Qnum2: String!
+  Choice3Qnum2: String!
+  Choice1Qnum3: String!
+  Choice2Qnum3: String!
+  Choice3Qnum3: String!
+  Choice1Qnum1Score: Int!
+  Choice2Qnum1Score: Int!
+  Choice3Qnum1Score: Int!
+  Choice1Qnum2Score: Int!
+  Choice2Qnum2Score: Int!
+  Choice3Qnum2Score: Int!
+  Choice1Qnum3Score: Int!
+  Choice2Qnum3Score: Int!
+  Choice3Qnum3Score: Int!
 }
 
 input createQuestionInput {

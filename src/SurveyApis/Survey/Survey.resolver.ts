@@ -1,4 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { CreateSurveyAllInput } from '../dto/createSurveyAll.input';
+import { CreateSurveyAllOutput } from '../dto/createSurveyAll.Output';
 import { UpdateSurveyInput } from '../dto/updateSurvey.input';
 import { Survey } from './entities/survey.entity';
 import { SurveyService } from './Survey.service';
@@ -44,6 +46,15 @@ export class SurveyResolver {
   async deleteSurvey(@Args('SurveyNumber') SurveyNumber: number) {
     await this.surveyService.checkExistSurvey(SurveyNumber);
     const result = await this.surveyService.deleteSurvey({ SurveyNumber });
+    return result;
+  }
+
+  @Mutation(() => CreateSurveyAllOutput)
+  async createSurveyAll(
+    @Args('CreateSurveyAllInput') CreateSurveyAllInput: CreateSurveyAllInput
+  ){
+    const result = await this.surveyService.createSurveyAll(CreateSurveyAllInput)
+    console.log(result)
     return result;
   }
 }

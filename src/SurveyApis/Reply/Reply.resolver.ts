@@ -1,6 +1,7 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Choice } from '../Choice/entities/choice.entity';
 import { CreateReplyInput } from '../dto/createReply.input';
+import { CreateReplyOutput } from '../dto/createReply.output';
 import { Reply } from './entities/reply.entity';
 import { ReplyService } from './Reply.service';
 
@@ -19,7 +20,7 @@ export class ReplyResolver {
     return this.replyService.fetchResultSurvey(ReplyNumber);
   }
 
-  @Mutation(() => Reply)
+  @Mutation(() => CreateReplyOutput)
   createReply(
     @Args('SurveyNumber') SurveyNumber: number,
     @Args('ChoiceInput') ChoiceInput: CreateReplyInput,

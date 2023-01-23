@@ -64,12 +64,14 @@ export class ReplyService {
       ChoiceNum1: ChoiceNum.Choice1,
       ChoiceNum2: ChoiceNum.Choice2,
       ChoiceNum3: ChoiceNum.Choice3,
-      SurveyNumber: SurveyNumber,
+      Survey: SurveyNumber,
       TotalScore: sum,
-      costomerName: ChoiceNum.costomerName,
+      customer: ChoiceNum.customer,
     };
 
-    return await this.replyRepository.save(saveresult);
+    const results = await this.replyRepository.save(saveresult);
+    console.log(results)
+    return  results;
   }
 
   async updateReply(ReplyNumber, ChoiceNum) {

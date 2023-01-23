@@ -9,5 +9,5 @@ export class CreateReplyInput {
   @Field(() => Int)
   Choice3: number;
   @Field(() => String)
-  costomerName: string | null;
+  customer: string | null;
 }

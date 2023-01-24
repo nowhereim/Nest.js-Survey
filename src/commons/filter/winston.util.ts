@@ -35,7 +35,7 @@ export const winstonLogger = WinstonModule.createLogger({
       // production 환경이라면 http, 개발환경이라면 모든 단계를 로그
       format: winston.format.combine(
         winston.format.timestamp(),
-        utilities.format.nestLike('앙포쯈', {
+        utilities.format.nestLike('안태환 입니다. 잘부탁드립니다!', {
           prettyPrint: true, // nest에서 제공하는 옵션. 로그 가독성을 높여줌
           //색상을 넣어줌
           colors: true,

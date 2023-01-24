@@ -37,3 +37,4 @@ lerna-debug.log*
 service.ts
 Submission
 README.md
+app.module.ts

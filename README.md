@@ -10,7 +10,7 @@
 <br> 2.로컬에 깔려있다는 전제하에 제작되었습니다.<br>
 <br> 3.받으신 후 Nest.js-Survey => src => app.module.ts 에서 username , password, database를 설정해주세요.<br>
 <br>
-4. 터미널에 cd Nest.js-Survey 를 입력하여 진입한 이후 npm install => npm start로 실행합니다.<br>
+4. 터미널에 cd Nest.js-Survey 를 입력하여 폴더내부로 진입한 이후 npm install => npm start로 실행합니다.<br>
 <br>
 5.http://localhost:4000/graphql 로 접속 후 DOCS를 참고하여 사용합니다.<br>
 <br>

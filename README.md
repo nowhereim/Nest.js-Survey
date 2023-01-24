@@ -150,11 +150,11 @@ Error는 src/logs/error/error.log 와 Exception.log 안에 시간순으로 저�
 
 ## 🌟사용 기술🌟
 
-> **typescript**
-> **nest.js**
-> **graphql**
-> **typeorm**
-> **postgresql**
-> **winston**
+> **typescript**<br/>
+> **nest.js**<br/>
+> **graphql**<br/>
+> **typeorm**<br/>
+> **postgresql**<br/>
+> **winston**<br/>
 <br/>
 </div>

@@ -9,7 +9,7 @@
 1.postgresql은 로컬로 작동합니다.<br>
 <br> 2.로컬에 깔려있다는 전제하에 제작되었습니다.<br>
 
-     3. 설문지의 문항수는 3개 각문항별 선택지또한 3개로 구현하였습니다.<br>
+<br>3. 설문지의 문항수는 3개 각문항별 선택지또한 3개로 구현하였습니다.<br>
      
 <br> 3.받으신 후 Nest.js-Survey => src => app.module.ts 에서 username , password, database를 설정해주세요.<br>
 <br>

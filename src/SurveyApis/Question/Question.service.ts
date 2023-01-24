@@ -14,6 +14,12 @@ export class QuestionService {
     return await this.questionRepository.find();
   }
 
+  async fetchQuestion(QuestionNumber) {
+    return await this.questionRepository.findOne({
+      where: { QuestionNumber: QuestionNumber },
+    });
+  }
+
   async createQuestion(Question, SurveyNumber) {
     const result = await this.questionRepository.save([
       { Question: Question.Question1, SurveyNumber: SurveyNumber },

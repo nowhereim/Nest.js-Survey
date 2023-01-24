@@ -1,5 +1,4 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { Choice } from '../Choice/entities/choice.entity';
 import { CreateReplyInput } from '../dto/createReply.input';
 import { CreateReplyOutput } from '../dto/createReply.output';
 import { Reply } from './entities/reply.entity';
@@ -18,6 +17,12 @@ export class ReplyResolver {
   async fetchRsultSurvey(@Args('ReplyNumber') ReplyNumber: number) {
     await this.replyService.checkExistSurvey(ReplyNumber);
     return this.replyService.fetchResultSurvey(ReplyNumber);
+  }
+
+  @Query(() => Reply)
+  async fetchReplyOne(@Args('ReplyNumber') ReplyNumber: number) {
+    await this.replyService.checkExistSurvey(ReplyNumber);
+    return this.replyService.fetchReplyOne(ReplyNumber);
   }
 
   @Mutation(() => CreateReplyOutput)

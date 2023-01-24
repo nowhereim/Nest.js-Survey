@@ -1,5 +1,4 @@
-import { Query } from '@nestjs/common';
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { createQuestionInput } from '../dto/createQuestion.input';
 import { UpdateQuestionInput } from '../dto/updateQuestion.input';
 import { Question } from './entities/question.entity';
@@ -8,6 +7,17 @@ import { QuestionService } from './Question.service';
 @Resolver()
 export class QuestionResolver {
   constructor(private readonly questionService: QuestionService) {}
+
+  @Query(() => [Question])
+  fetchQuestionAll() {
+    return this.questionService.fetchQuestionAll();
+  }
+
+  @Query(() => Question)
+  async fetchQuestionOne(@Args('QuestionNumber') QuestionNumber: number) {
+    await this.questionService.checkExistQuestion(QuestionNumber);
+    return this.questionService.fetchQuestion(QuestionNumber);
+  }
 
   @Mutation(() => [Question])
   createQuestion(

@@ -15,6 +15,4 @@ export class CreateSurveyAllOutput {
 
   @Field(() => [Choice])
   choice: Choice;
-
-
 }

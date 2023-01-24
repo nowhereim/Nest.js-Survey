@@ -13,9 +13,9 @@ export class CreateReplyOutput {
   @Field(() => String)
   customer: string | null;
   @Field(() => Int)
-  Survey: number
+  Survey: number;
   @Field(() => Int)
-  TotalScore: number
+  TotalScore: number;
   @Field(() => Int)
-  ReplyNumber: number
+  ReplyNumber: number;
 }

@@ -7,7 +7,7 @@ import { Choice } from '../Choice/entities/choice.entity';
 import { Question } from '../Question/entities/question.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Survey,Choice,Question])],
+  imports: [TypeOrmModule.forFeature([Survey, Choice, Question])],
   providers: [SurveyResolver, SurveyService],
 })
 export class SurveyModule {}

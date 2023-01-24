@@ -45,6 +45,22 @@ export class ReplyService {
     return result;
   }
 
+  async fetchReplyOne(ReplyNumber) {
+    const result = await this.replyRepository.findOne({
+      where: { ReplyNumber: ReplyNumber },
+      relations: [
+        'Survey',
+        'ChoiceNum1',
+        'ChoiceNum2',
+        'ChoiceNum3',
+        'ChoiceNum1.QuestionNumber',
+        'ChoiceNum2.QuestionNumber',
+        'ChoiceNum3.QuestionNumber',
+      ],
+    });
+    return result;
+  }
+
   async createReply(SurveyNumber, ChoiceNum) {
     const result = await this.choiceRepository.find({
       select: ['Score'],
@@ -70,8 +86,8 @@ export class ReplyService {
     };
 
     const results = await this.replyRepository.save(saveresult);
-    console.log(results)
-    return  results;
+    console.log(results);
+    return results;
   }
 
   async updateReply(ReplyNumber, ChoiceNum) {

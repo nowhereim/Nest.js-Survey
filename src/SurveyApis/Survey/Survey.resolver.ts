@@ -15,7 +15,8 @@ export class SurveyResolver {
   }
 
   @Query(() => Survey)
-  fetchSurveyOne(@Args('SurveyNumber') SurveyNumber: number) {
+  async fetchSurveyOne(@Args('SurveyNumber') SurveyNumber: number) {
+    await this.surveyService.checkExistSurvey(SurveyNumber);
     return this.surveyService.fetchSurveyOne({ SurveyNumber });
   }
   @Mutation(() => Survey)
@@ -51,10 +52,12 @@ export class SurveyResolver {
 
   @Mutation(() => CreateSurveyAllOutput)
   async createSurveyAll(
-    @Args('CreateSurveyAllInput') CreateSurveyAllInput: CreateSurveyAllInput
-  ){
-    const result = await this.surveyService.createSurveyAll(CreateSurveyAllInput)
-    console.log(result)
+    @Args('CreateSurveyAllInput') CreateSurveyAllInput: CreateSurveyAllInput,
+  ) {
+    const result = await this.surveyService.createSurveyAll(
+      CreateSurveyAllInput,
+    );
+    console.log(result);
     return result;
   }
 }

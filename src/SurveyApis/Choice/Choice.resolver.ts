@@ -13,6 +13,12 @@ export class ChoiceResolver {
     return this.choiceService.fetchChoiceAll();
   }
 
+  @Query(() => Choice)
+  async fetchChoiceOne(@Args('ChoiceNumber') ChoiceNumber: number) {
+    await this.choiceService.checkExistChoice(ChoiceNumber);
+    return this.choiceService.fetchChoiceOne(ChoiceNumber);
+  }
+
   @Mutation(() => [Choice])
   createChoice(
     @Args('QuestionNumber') QuestionNumber: number,

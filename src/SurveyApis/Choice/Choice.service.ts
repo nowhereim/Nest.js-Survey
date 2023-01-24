@@ -15,6 +15,13 @@ export class ChoiceService {
     return await this.choiceRepository.find();
   }
 
+  async fetchChoiceOne(ChoiceNumber) {
+    const result = await this.choiceRepository.findOne({
+      where: { ChoiceNumber: ChoiceNumber },
+    });
+    return result;
+  }
+
   async createChoice(QuestionNumber, ChoiceInput, Score) {
     const result = await this.choiceRepository.save([
       {

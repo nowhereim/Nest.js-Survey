@@ -1,5 +1,5 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule, Logger } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ReplyModule } from './SurveyApis/Reply/Reply.module';
@@ -8,11 +8,13 @@ import { QuestionModule } from './SurveyApis/Question/Question.module';
 import { SurveyModule } from './SurveyApis/Survey/Survey.module';
 import { WinstonModule, utilities } from 'nest-winston';
 import * as winston from 'winston';
+import { LoggerMiddleware } from './commons/middlewares/logger.middleware';
 const level = process.env.NODE_ENV === 'production' ? 'error' : 'silly';
 const format = winston.format.combine(
   winston.format.timestamp(),
   utilities.format.nestLike('front', { prettyPrint: true }),
 );
+
 @Module({
   imports: [
     WinstonModule.forRoot({
@@ -22,9 +24,9 @@ const format = winston.format.combine(
           format: format,
         }),
         new winston.transports.File({
-          dirname: `./${(Date.now() / 1000).toFixed(0)}`,
-          filename: 'history.log',
-          level: level,
+          dirname: __dirname + '/logs/error',
+          filename: `Exception.log`,
+          level: 'info',
           format: format,
         }),
       ],
@@ -49,5 +51,11 @@ const format = winston.format.combine(
       logging: true,
     }),
   ],
+  providers: [Logger],
 })
-export class AppModule {}
+// export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes('*');
+  }
+}

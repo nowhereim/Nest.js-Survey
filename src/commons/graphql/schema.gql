@@ -50,9 +50,13 @@ type CreateSurveyAllOutput {
 type Query {
   fetchReplyAll: [Reply!]!
   fetchRsultSurvey(ReplyNumber: Float!): Reply!
+  fetchReplyOne(ReplyNumber: Float!): Reply!
   fetchSurveyAll: [Survey!]!
   fetchSurveyOne(SurveyNumber: Float!): Survey!
+  fetchQuestionAll: [Question!]!
+  fetchQuestionOne(QuestionNumber: Float!): Question!
   fetchChoiceAll: [Choice!]!
+  fetchChoiceOne(ChoiceNumber: Float!): Choice!
 }
 
 type Mutation {

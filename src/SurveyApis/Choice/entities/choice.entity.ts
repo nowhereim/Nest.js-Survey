@@ -9,6 +9,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Min, Max } from 'class-validator';
 
 @Entity()
 @ObjectType()
@@ -20,7 +21,8 @@ export class Choice {
   @ManyToOne(() => Question)
   @Field(() => Question)
   QuestionNumber: Question;
-
+  @Min(0)
+  @Max(3)
   @Column()
   @Field(() => Int)
   Score: number;

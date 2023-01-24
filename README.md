@@ -139,7 +139,9 @@ Error는 src/logs/error/error.log 와 Exception.log 안에 시간순으로 저�
 
 ## 🍀 API
 
-<!-- ![image](https://user-images.githubusercontent.com/113084907/213829180-73becbdf-81bf-49c7-9d38-cf5a4c593955.png) -->
+<img width="212" alt="image" src="https://user-images.githubusercontent.com/113084907/214338728-b25392dc-009f-41d3-b4c3-ed6f14cbe432.png">
+
+상새내역은 DOCS를 참고해주세요.
 
 
 ## 🍀 ERD

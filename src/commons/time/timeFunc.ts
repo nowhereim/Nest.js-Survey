@@ -1,4 +1,7 @@
 export class timestuuf {
+  year: Date;
+  month: Date;
+  day: Date;
   constructor() {
     console.log(this.getNowDate());
   }

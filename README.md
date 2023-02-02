@@ -1,4 +1,3 @@
-## 프로젝트 제작 기간 01-17 ~ 01 - 18
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>

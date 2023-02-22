@@ -142,9 +142,6 @@ Error는 src/logs/error/error.log 와 Exception.log 안에 시간순으로 저�
 상세내역은 DOCS를 참고해주세요.
 
 
-## 🍀 ERD
-<img width="595" alt="image" src="https://user-images.githubusercontent.com/113084907/214326213-8ddd4821-f13f-457e-87b2-09caec545bcb.png">
-
 
 
 ## 🌟사용 기술🌟

@@ -132,7 +132,6 @@ query{
 <img width="441" alt="image" src="https://user-images.githubusercontent.com/113084907/214292430-f149e7b5-672e-4985-a14b-f4d7129bcb20.png">
 <img width="1489" alt="image" src="https://user-images.githubusercontent.com/113084907/214319781-13b88b46-3599-44e5-93b0-7dc720caabab.png">
 
-Error는 src/logs/error/error.log 와 Exception.log 안에 시간순으로 저장되게 하였습니다.
 
 
 ## 🍀 API

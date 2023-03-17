@@ -2,7 +2,7 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
-
+ 
 ## 🌟🌟 사용방법 🌟🌟
 ## 설문지당 문항수는 3개 각 문항별 선택지또한 3개로 구현하였습니다.<br>
 1.postgresql은 로컬로 작동합니다.<br>

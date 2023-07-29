@@ -1,8 +1,10 @@
+## [🌟🌟 개선버전 바로가기 🌟🌟](https://github.com/nowhereim/survey)
 
+   
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
- 
+
 ## 🌟🌟 사용방법 🌟🌟
 1.postgresql은 로컬로 작동합니다.<br>
 2.http://localhost:4000/graphql 로 접속 후 DOCS를 참고하여 사용합니다.<br>
